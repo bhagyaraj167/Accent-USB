@@ -1,5 +1,8 @@
 package com.bignerdranch.android.myapplication
 
+import android.content.Intent
+import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.compose.ui.test.onNodeWithTag
@@ -10,11 +13,13 @@ import com.bignerdranch.android.myapplication.model.Itunes
 import com.bignerdranch.android.myapplication.model.Result
 import com.bignerdranch.android.myapplication.network.APIState
 import com.bignerdranch.android.myapplication.network.Status
+import com.bignerdranch.android.myapplication.ui.theme.MyApplicationTheme
 import com.bignerdranch.android.myapplication.view.getItunes
 import com.bignerdranch.android.myapplication.viewmodel.ItunesViewModel
 import io.mockk.every
 import io.mockk.mockk
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import org.junit.Rule
 import org.junit.Test
@@ -24,10 +29,9 @@ import org.junit.runner.RunWith
 class ItunesScreenTest {
     @get:Rule
     val composeTestRule = createAndroidComposeRule<TestingHostActivity>()
+    private val intents by lazy { MutableStateFlow(composeTestRule.activity.intent) }
 
     private val ItunesScreenViewModelSuccess = mockk<ItunesViewModel> {
-
-
         val mockKAdditionalAnswerScope = every { itunes } returns MutableStateFlow(
             APIState(
                 Status.SUCCESS,
@@ -54,11 +58,19 @@ class ItunesScreenTest {
                 null,
                 null)).asStateFlow()
     }
-
+    val LocalIntents = staticCompositionLocalOf<StateFlow<Intent>> {
+        throw UnsupportedOperationException("Must be set via CompositionLocalProvider")
+    }
     fun setContentForSuccess() {
         composeTestRule.setContent {
-            getItunes(itunesViewModel = ItunesScreenViewModelSuccess,
-                navController = rememberNavController())
+            MyApplicationTheme {
+                CompositionLocalProvider(
+                    LocalIntents provides intents
+                ) {
+                    getItunes(itunesViewModel = ItunesScreenViewModelSuccess,
+                        navController  = rememberNavController())
+                }
+            }
         }
     }
 

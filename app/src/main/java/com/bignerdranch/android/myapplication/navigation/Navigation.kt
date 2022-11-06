@@ -13,7 +13,8 @@ import com.bignerdranch.android.myapplication.view.getItunes
 fun Navigation() {
     val navController = rememberNavController()
     NavHost(navController = navController, startDestination = Screen.ItunesListScreen.route) {
-        composable(route = Screen.ItunesListScreen.route) {
+        composable(
+            route = Screen.ItunesListScreen.route) {
             getItunes(navController = navController)
         }
         composable(

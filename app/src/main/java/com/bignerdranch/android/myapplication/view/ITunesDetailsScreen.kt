@@ -19,7 +19,7 @@ fun ITunesDetailsScreen(
     artImage: String?=null,
     longDesc: String?=null
 ){
-    Column() {
+    Column {
         trackName?.let { Text(text = it,modifier = Modifier.testTag("detailedtrackName"), style = TextStyle(
             fontSize = 16.sp,
             fontWeight = FontWeight.SemiBold
@@ -31,9 +31,11 @@ fun ITunesDetailsScreen(
                contentDescription = "")
        }
 
-        trackName?.let { longDesc?.let { it1 -> Text(text = it1, modifier = Modifier.testTag("detailedLongDesc") ,style = TextStyle(
-            fontSize = 16.sp,
-            fontWeight = FontWeight.SemiBold
-        )) } }
+        longDesc?.let {
+            longDesc.let { it1 -> Text(text = it1, modifier = Modifier.testTag("detailedLongDesc") ,style = TextStyle(
+                fontSize = 16.sp,
+                fontWeight = FontWeight.SemiBold
+            )) }
+        }
     }
 }
