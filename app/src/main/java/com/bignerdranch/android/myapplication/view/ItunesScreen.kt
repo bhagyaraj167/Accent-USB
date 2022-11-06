@@ -101,7 +101,7 @@ fun SearchComponent(
 ) {
     var text by rememberSaveable { mutableStateOf(("")) }
     termValue.value = text
-    Column {
+    Column(modifier = Modifier.testTag("searchComponent")) {
         Row(modifier = Modifier.fillMaxWidth()) {
             BasicTextField(
                 value = text,
@@ -134,7 +134,7 @@ fun ListItem(
     onItemClick: () -> Unit,
 ) {
     Row(
-        modifier = Modifier
+        modifier = Modifier.testTag("ituneItem")
             .fillMaxWidth()
             .background(LIGHTBLUE)
             .clickable {
@@ -144,14 +144,14 @@ fun ListItem(
         ) {
         Image(
             painter = rememberAsyncImagePainter(item.artworkUrl30),
-            modifier = Modifier.size(100.dp),
+            modifier = Modifier.size(100.dp).testTag("ituneImage"),
             contentDescription = ""
         )
         Column {
             item.trackName?.let {
                 Text(
                     modifier = Modifier
-                        .padding(horizontal = 10.dp),
+                        .padding(horizontal = 10.dp).testTag("trackname"),
                     text = it,
                     style = TextStyle(
                         fontSize = 16.sp,
@@ -161,7 +161,7 @@ fun ListItem(
             }
 
             Text(
-                modifier = Modifier
+                modifier = Modifier.testTag("trackPriceText")
                     .padding(horizontal = 10.dp),
                 text = item.trackPrice.toString(),
                 style = TextStyle(
@@ -172,7 +172,7 @@ fun ListItem(
             item.kind?.let {
                 Text(
                     modifier = Modifier
-                        .padding(horizontal = 10.dp),
+                        .padding(horizontal = 10.dp).testTag("kindText"),
                     text = it,
                     style = TextStyle(
                         fontSize = 14.sp,

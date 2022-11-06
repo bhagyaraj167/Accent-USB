@@ -5,63 +5,63 @@ import com.google.gson.annotations.SerializedName
 
 data class Result(
     @SerializedName("artistId")
-    val artistId: Int,
+    val artistId: Int? = null,
     @SerializedName("artistName")
-    val artistName: String?,
+    val artistName: String? = null,
     @SerializedName("artistViewUrl")
-    val artistViewUrl: String?,
+    val artistViewUrl: String?= null,
     @SerializedName("artworkUrl100")
-    val artworkUrl100: String?,
+    val artworkUrl100: String?= null,
     @SerializedName("artworkUrl30")
-    val artworkUrl30: String?,
+    val artworkUrl30: String?= null,
     @SerializedName("artworkUrl60")
-    val artworkUrl60: String?,
+    val artworkUrl60: String?= null,
     @SerializedName("collectionCensoredName")
-    val collectionCensoredName: String?,
+    val collectionCensoredName: String?= null,
     @SerializedName("collectionExplicitness")
-    val collectionExplicitness: String?,
+    val collectionExplicitness: String?= null,
     @SerializedName("collectionId")
-    val collectionId: Int,
+    val collectionId: Int?= null,
     @SerializedName("collectionName")
-    val collectionName: String?,
+    val collectionName: String?= null,
     @SerializedName("collectionPrice")
-    val collectionPrice: Double,
+    val collectionPrice: Double?= null,
     @SerializedName("collectionViewUrl")
-    val collectionViewUrl: String,
+    val collectionViewUrl: String?= null,
     @SerializedName("country")
-    val country: String,
+    val country: String?= null,
     @SerializedName("currency")
-    val currency: String,
+    val currency: String?= null,
     @SerializedName("discCount")
-    val discCount: Int,
+    val discCount: Int?= null,
     @SerializedName("discNumber")
-    val discNumber: Int,
+    val discNumber: Int?= null,
     @SerializedName("kind")
-    val kind: String?,
+    val kind: String?= null,
     @SerializedName("previewUrl")
-    val previewUrl: String,
+    val previewUrl: String?= null,
     @SerializedName("primaryGenreName")
-    val primaryGenreName: String?,
+    val primaryGenreName: String?= null,
     @SerializedName("releaseDate")
-    val releaseDate: String?,
+    val releaseDate: String?= null,
     @SerializedName("trackCensoredName")
-    val trackCensoredName: String?,
+    val trackCensoredName: String?= null,
     @SerializedName("trackCount")
-    val trackCount: Int?,
+    val trackCount: Int?= null,
     @SerializedName("trackExplicitness")
-    val trackExplicitness: String?,
+    val trackExplicitness: String?= null,
     @SerializedName("trackId")
-    val trackId: Int?,
+    val trackId: Int?= null,
     @SerializedName("trackName")
-    val trackName: String?,
+    val trackName: String?= null,
     @SerializedName("trackNumber")
-    val trackNumber: Int?,
+    val trackNumber: Int?= null,
     @SerializedName("trackPrice")
-    val trackPrice: Double?,
+    val trackPrice: Double?= null,
     @SerializedName("trackTimeMillis")
-    val trackTimeMillis: Int?,
+    val trackTimeMillis: Int?= null,
     @SerializedName("trackViewUrl")
-    val trackViewUrl: String?,
+    val trackViewUrl: String?= null,
     @SerializedName("wrapperType")
-    val wrapperType: String?
+    val wrapperType: String?= null
 )

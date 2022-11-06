@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -19,18 +20,18 @@ fun ITunesDetailsScreen(
     longDesc: String?=null
 ){
     Column() {
-        trackName?.let { Text(text = it, style = TextStyle(
+        trackName?.let { Text(text = it,modifier = Modifier.testTag("detailedtrackName"), style = TextStyle(
             fontSize = 16.sp,
             fontWeight = FontWeight.SemiBold
         )) }
        artImage?.let {
            Image(
                painter = rememberAsyncImagePainter(artImage),
-               modifier = Modifier.size(100.dp),
+               modifier = Modifier.testTag("detailedImage").size(100.dp),
                contentDescription = "")
        }
 
-        trackName?.let { longDesc?.let { it1 -> Text(text = it1, style = TextStyle(
+        trackName?.let { longDesc?.let { it1 -> Text(text = it1, modifier = Modifier.testTag("detailedLongDesc") ,style = TextStyle(
             fontSize = 16.sp,
             fontWeight = FontWeight.SemiBold
         )) } }

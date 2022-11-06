@@ -8,6 +8,7 @@ import androidx.compose.material.icons.filled.KeyboardArrowDown
 import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 
 @Composable
 fun dropdDownMenu(entity: MutableState<String>) {
@@ -23,7 +24,7 @@ fun dropdDownMenu(entity: MutableState<String>) {
         Icons.Filled.KeyboardArrowUp
     else
         Icons.Filled.KeyboardArrowDown
-    Column {
+    Column(modifier = Modifier.testTag("dropDown")) {
         OutlinedTextField(
             value = selectedText,
             onValueChange = { selectedText = it },
