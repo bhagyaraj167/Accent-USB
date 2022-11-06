@@ -7,23 +7,23 @@ data class Result(
     @SerializedName("artistId")
     val artistId: Int,
     @SerializedName("artistName")
-    val artistName: String,
+    val artistName: String?,
     @SerializedName("artistViewUrl")
-    val artistViewUrl: String,
+    val artistViewUrl: String?,
     @SerializedName("artworkUrl100")
-    val artworkUrl100: String,
+    val artworkUrl100: String?,
     @SerializedName("artworkUrl30")
-    val artworkUrl30: String,
+    val artworkUrl30: String?,
     @SerializedName("artworkUrl60")
-    val artworkUrl60: String,
+    val artworkUrl60: String?,
     @SerializedName("collectionCensoredName")
-    val collectionCensoredName: String,
+    val collectionCensoredName: String?,
     @SerializedName("collectionExplicitness")
-    val collectionExplicitness: String,
+    val collectionExplicitness: String?,
     @SerializedName("collectionId")
     val collectionId: Int,
     @SerializedName("collectionName")
-    val collectionName: String,
+    val collectionName: String?,
     @SerializedName("collectionPrice")
     val collectionPrice: Double,
     @SerializedName("collectionViewUrl")
@@ -37,31 +37,31 @@ data class Result(
     @SerializedName("discNumber")
     val discNumber: Int,
     @SerializedName("kind")
-    val kind: String,
+    val kind: String?,
     @SerializedName("previewUrl")
     val previewUrl: String,
     @SerializedName("primaryGenreName")
-    val primaryGenreName: String,
+    val primaryGenreName: String?,
     @SerializedName("releaseDate")
-    val releaseDate: String,
+    val releaseDate: String?,
     @SerializedName("trackCensoredName")
-    val trackCensoredName: String,
+    val trackCensoredName: String?,
     @SerializedName("trackCount")
-    val trackCount: Int,
+    val trackCount: Int?,
     @SerializedName("trackExplicitness")
-    val trackExplicitness: String,
+    val trackExplicitness: String?,
     @SerializedName("trackId")
-    val trackId: Int,
+    val trackId: Int?,
     @SerializedName("trackName")
-    val trackName: String,
+    val trackName: String?,
     @SerializedName("trackNumber")
-    val trackNumber: Int,
+    val trackNumber: Int?,
     @SerializedName("trackPrice")
-    val trackPrice: Double,
+    val trackPrice: Double?,
     @SerializedName("trackTimeMillis")
-    val trackTimeMillis: Int,
+    val trackTimeMillis: Int?,
     @SerializedName("trackViewUrl")
-    val trackViewUrl: String,
+    val trackViewUrl: String?,
     @SerializedName("wrapperType")
-    val wrapperType: String
+    val wrapperType: String?
 )

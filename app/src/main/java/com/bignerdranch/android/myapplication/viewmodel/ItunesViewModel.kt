@@ -19,7 +19,7 @@ class ItunesViewModel @Inject constructor(val repository: ItunesRepo) : ViewMode
     val url = "https://itunes.apple.com/search?term=jack+johnson&entity=musicVideo"
     private val _ituneData = MutableStateFlow(
         APIState(
-            Status.LOADING,
+            Status.ERROR,
             Itunes(),
             null))
 
